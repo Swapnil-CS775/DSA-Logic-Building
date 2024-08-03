@@ -39,3 +39,24 @@ public class SearchInRange {
         return false;
     }
 }
+
+// Problem 3 - Minimum Number in array
+package Swapnil.com;
+
+public class MinimumNumber {
+    public static void main(String[] args) {
+        int [] arr={2,8,9,7,11,6,3,99,-30};
+        System.out.println(minimumNumber(arr));
+    }
+    public static int minimumNumber(int []arr)
+    {
+        int min=arr[0];
+        for(int num:arr)
+        {
+            if(num<min)
+                min=num;
+        }
+        return min;
+    }
+}
+
