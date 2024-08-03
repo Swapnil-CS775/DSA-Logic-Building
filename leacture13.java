@@ -40,6 +40,7 @@ public class SearchInRange {
     }
 }
 
+
 // Problem 3 - Minimum Number in array
 package Swapnil.com;
 
@@ -59,6 +60,7 @@ public class MinimumNumber {
         return min;
     }
 }
+
 
 //Problem 4 : Traversing 2D array and find key and return index of key
 package Swapnil.com;
@@ -98,5 +100,41 @@ public class Traversing2DArray {
     }
 
 }
+
+
+// Problem 5 - count such number from array which contain even number of digits
+package Swapnil.com;
+
+public class EvenDigits {
+    public static void main(String[] args) {
+        int [] arr={2,11,0,325,19,4,1334,-23};
+        System.out.println(evenDigitCounter(arr));
+    }
+    public static int evenDigitCounter(int []arr)
+    {
+        int count=0;
+        for(int num:arr)
+        {
+          if(isEvenNoOfDigit(num))
+              count++;
+        }
+        return count;
+    }
+    static boolean isEvenNoOfDigit(int num)
+    {
+        if(num==0)return false;
+        // here we handel special case is that if number=0 than num>0 condition become false and default digitCount is 0
+        // and if we check digitCount%2==0 than it also return true bcz 0%2=0 than count will increase
+        if(num<0)num=-num;
+        //here we handle if any -ve number is there by making it positive
+        int digitCount = 0;
+        while (num>0) {
+            digitCount++;
+            num=num / 10;
+        }
+        return digitCount % 2 == 0;
+    }
+}
+
 
 
