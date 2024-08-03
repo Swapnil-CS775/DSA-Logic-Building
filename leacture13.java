@@ -60,3 +60,43 @@ public class MinimumNumber {
     }
 }
 
+//Problem 4 : Traversing 2D array and find key and return index of key
+package Swapnil.com;
+
+import java.util.Arrays;
+
+public class Traversing2DArray {
+    public static void main(String[] args) {
+        int [][]arr={
+                {2,4,8,3},
+                {7},
+                {0,9},
+                {19,5,23}
+        };
+        int []ans=traverse2DArray(arr,0);
+        System.out.println(Arrays.toString(ans));
+        // System.out.println(ans); output =[I@6ce253f1  reason---
+        /*
+        * If you directly try to print an array using System.out.println(ans);,
+        *  you will get a string that represents the array's memory address rather than its contents.
+        *  This is because System.out.println will call the array's toString method,
+        *  which doesn't provide a human-readable format for array contents.
+        * */
+    }
+
+    public static int[] traverse2DArray(int [][]arr,int key)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr[i].length;j++)
+            {
+                if(arr[i][j]==key)
+                    return new int[] {i,j};
+            }
+        }
+        return new int[] {};
+    }
+
+}
+
+
