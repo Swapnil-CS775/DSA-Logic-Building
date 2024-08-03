@@ -136,5 +136,12 @@ public class EvenDigits {
     }
 }
 
+//Optimized approch for question 5 -
+static boolean isEvenNoOfDigit2(int num)
+    {
+        if(num<0)num=-num;
+        int digitCount=(int)Math.log10(num)+1;
+        return digitCount % 2 == 0;
+    }
 
 
