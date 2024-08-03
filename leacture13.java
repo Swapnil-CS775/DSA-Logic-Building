@@ -15,3 +15,27 @@ public class FindCharacterInString {
         System.out.println("not found");
     }
 }
+
+
+
+// Problem 2 - Search In Range
+package Swapnil.com;
+
+public class SearchInRange {
+    public static void main(String[] args) {
+        int [] arr={2,8,9,7,11,6,3,99};
+        System.out.println(searchNumber(arr,9,0,3));
+    }
+
+    public static boolean searchNumber(int []arr,int key,int from,int to)
+    {
+        for(int i=from;i<=to;i++)
+        {
+            if(arr[i]==key)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
