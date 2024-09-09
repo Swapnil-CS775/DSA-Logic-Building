@@ -119,3 +119,61 @@ public class InfiniteArrya {
     
 }
 //output 1;
+
+//Find how may times sorted arry is rotated it may contain non distinct element 
+//my code is for both distinct and non distinct element
+//code
+package Swapnil.com;
+
+public class UpdatedHowManyTimesArrayRotated {
+    public static void main(String[] args) {
+        int[] arr={2,2,3,3,4,0,1,2,2};
+        int[] nums={1,2,3,4,5,6,7,8,9};
+        int start=0,end=arr.length-1;
+        System.out.println(findPivot(arr,start,end)+1);
+        System.out.println(findPivot(nums,start,end)+1);
+    }
+
+    public static int findPivot(int[] nums, int start, int end) {
+
+        if(nums[start]<nums[start+1] && nums[end]>nums[end-1])
+        {
+            return -1;
+        }
+        while (start <= end) {
+            if (start == end) {
+                return start;
+            }
+
+            int mid = start + (end - start) / 2;
+
+            // Handle edge cases
+            if (mid < end && nums[mid] > nums[mid + 1]) {
+                return mid;
+            }
+            if (mid > start && nums[mid] < nums[mid - 1]) {
+                return mid - 1;
+            }
+
+            if (nums[start] == nums[mid] && nums[mid] == nums[end]) {
+                if (nums[start] > nums[start + 1]) {
+                    return start;
+                }
+                start++;
+                if (nums[end] < nums[end - 1]) {
+                    return end - 1;
+                }
+                end--;
+            } else if (nums[start] <= nums[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+}
+//Output - 
+// 5
+// 0
